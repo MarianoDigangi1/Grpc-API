@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc.product";
+
+  service userService{
+    rpc findProduct(Id) returns (ProductRequest){}
+  }
+
+  message Id{
+    int64 id = 1;
+  }
+
+  message ProductRequest{
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    date date = 4;
+    float price = 5;
+    int32 available = 6;
+
+  }
+
+  message date {
+    int32 day = 1;
+    int32 month = 2;
+    int32 year = 3;
+}
+
+
